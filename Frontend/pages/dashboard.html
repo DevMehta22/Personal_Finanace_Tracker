@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <script src="../js/dashboard.js" defer></script>
+    <title>Dashboard - Finance Tracker</title>
+</head>
+<body>
+    <header>
+        <h1>Your Dashboard</h1>
+        <nav>
+            <ul>
+                <li><a href="transactions.html">Transactions</a></li>
+                <li><a href="budgets.html">Budgets</a></li>
+                <li><a href="goals.html">Goals</a></li>
+                <li><a href="export.html">Export Data</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Summary</h2>
+        <div id="summary">
+        </div>
+        <div class="set-starting-balance">
+            <h3>Set Starting Balance</h3>
+            <label for="startingBalance">Starting Balance:</label>
+            <input type="number" id="startingBalance" placeholder="Enter starting balance">
+            <button onclick="setStartingBalance()">Save Balance</button>
+            <p id="balanceMessage"></p>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Finance Tracker</p>
+    </footer>
+</body>
+</html>

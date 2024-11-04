@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/transactions.css">
+    <script src="../js/transactions.js" defer></script>
+    <title>Transactions - Finance Tracker</title>
+</head>
+<body>
+    <header>
+        <h1>Manage Transactions</h1>
+    </header>
+    <main>
+        <form id="transaction-form">
+            <label for="amount">Amount:</label>
+            <input type="number" id="amount" name="amount" required>
+            
+            <label for="category">Category:</label>
+            <input type="text" id="category" name="category" required>
+            
+            <label for="type">Type:</label>
+            <select id="type" name="type" required>
+                <option value="income">Income</option>
+                <option value="expense">Expense</option>
+            </select>
+            
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date" required>
+            
+            <button type="submit">Add Transaction</button>
+        </form>
+        <h2>Your Transactions</h2>
+        <div id="transaction-list">
+            <!-- Transaction data will be populated here -->
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Finance Tracker</p>
+    </footer>
+</body>
+</html>
