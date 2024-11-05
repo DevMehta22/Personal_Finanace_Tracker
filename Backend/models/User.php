@@ -53,6 +53,30 @@ class User {
         return $stmt->fetchColumn();
     }
 
+    public function getVisualizeSummary($userId) {
+        $query = "
+            SELECT 
+                MONTH(date) AS month, 
+                YEAR(date) AS year,
+                SUM(CASE WHEN type = 'income' THEN amount ELSE 0 END) AS total_income,
+                SUM(CASE WHEN type = 'expense' THEN amount ELSE 0 END) AS total_expense
+            FROM 
+                transactions 
+            WHERE 
+                user_id = :user_id
+            GROUP BY 
+                YEAR(date), MONTH(date)
+            ORDER BY 
+                year, month;
+        ";
+    
+        $stmt = $this->pdo->prepare($query);
+        $stmt->bindParam(':user_id', $userId, PDO::PARAM_INT);
+        $stmt->execute();
+    
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
     public function userExists($userId) {
         $sql = "SELECT COUNT(*) FROM users WHERE id = ?";
         $stmt = $this->pdo->prepare($sql);

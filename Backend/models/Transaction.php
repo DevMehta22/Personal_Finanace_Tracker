@@ -19,6 +19,8 @@ class Transaction {
             $query .= " AND date BETWEEN :start_date AND :end_date";
         }
 
+        $query .= " ORDER BY date DESC";
+
         $stmt = $this->pdo->prepare($query);
         $stmt->bindParam(':user_id', $userId, PDO::PARAM_INT);
 

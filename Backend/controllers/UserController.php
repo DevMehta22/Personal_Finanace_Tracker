@@ -74,6 +74,17 @@ class UserController {
             echo json_encode(["message" => "Failed to retrieve current balance."]);
         }
     }
+
+    public function getVisualizeSummary($userId){
+        $summary = $this->user->getVisualizeSummary($userId);
+        if ($summary !== false) {
+            echo json_encode(["summary"=>$summary]);
+            exit;
+            } else {
+                echo json_encode(["message" => "Failed to retrieve summary."]);
+                }
+        
+    }
     
 }
 ?>
