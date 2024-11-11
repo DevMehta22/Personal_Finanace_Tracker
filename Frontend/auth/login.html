@@ -8,23 +8,38 @@
 </head>
 <body>
     <header>
-        <h1>Login to Finance Tracker</h1>
+        <div class="logo-container">
+            <img src="../logo.jpg" alt="Spendify Logo" class="logo"> <!-- Logo Image -->
+            <h1 class="company-name">Spendify</h1>
+        </div>
+        <h2>Login to Finance Tracker</h2>
     </header>
     <main>
-        <form id="login-form">
-            <label for="name">Username:</label>
-            <input type="name" id="name" name="name" required>
-            
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
-            
-            <button type="submit">Login</button>
-        </form>
-        <p>Don't have an account? <a href="register.html">Register here</a></p>
+        <div class="login-container">
+            <form id="login-form">
+                <h2>Welcome Back</h2>
+                <p class="form-description">Please login to continue</p>
+                
+                <label for="name">Username:</label>
+                <div class="input-container">
+                    <img src="image.png" alt="User Icon" class="input-icon">
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <label for="password">Password:</label>
+                <div class="input-container">
+                    <img src="pass.jpg" alt="Password Icon" class="input-icon">
+                    <input type="password" id="password" name="password" required>
+                </div>
+
+                <button type="submit">Login</button>
+            </form>
+            <p class="register-link">Don’t have an account? <a href="register.html">Register here</a></p>
+        </div>
     </main>
     <footer>
         <p>&copy; 2024 Finance Tracker</p>
     </footer>
     <script src="../js/auth.js"></script>
 </body>
-</html>
+</html> 

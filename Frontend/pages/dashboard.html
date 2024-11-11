@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,31 +10,85 @@
 </head>
 <body>
     <header>
-        <h1>Your Dashboard</h1>
+        <div class="logo-container">
+            <img src="..\logo.jpg" alt="Spendify Logo" class="logo"> <!-- Logo Image -->
+            <h1 class="company-name">Spendify</h1>
+        </div>
+        <h2>Your Dashboard</h2>
         <nav>
             <ul>
                 <li><a href="transactions.html">Transactions</a></li>
-                <li><a href="budgets.html">Budgets</a></li>
-                <li><a href="goals.html">Goals</a></li>
-                <li><a href="export.html">Export Data</a></li>
                 <li><a href="visualization.html">Chart</a></li>
             </ul>
         </nav>
     </header>
+
     <main>
-        <h2>Summary</h2>
-        <div id="summary">
-        </div>
-        <div class="set-starting-balance">
+        <section class="summary-section">
+            <h2> Financial Insights</h2>
+            <div id="summary">
+                <div class="card">
+                    <h3>Total Balance</h3>
+                    <p id="totalBalance">$0.00</p>
+                </div>
+                <div class="card">
+                    <h3>Total Income</h3>
+                    <p id="totalIncome">$0.00</p>
+                </div>
+                <div class="card">
+                    <h3>Total Expenses</h3>
+                    <p id="totalExpenses">$0.00</p>
+                </div>
+                <div class="card">
+                    <h3>Budget Remaining</h3>
+                    <p id="budgetRemaining">$0.00</p>
+                </div>
+            </div>
+        </section>
+        
+
+        <section class="set-starting-balance">
             <h3>Set Starting Balance</h3>
             <label for="startingBalance">Starting Balance:</label>
-            <input type="number" id="startingBalance" placeholder="Enter starting balance">
-            <button onclick="setStartingBalance()">Save Balance</button>
+            <div class="balance-input-container">
+                <input type="number" id="startingBalance" placeholder="Enter starting balance" min="0">
+                <button onclick="setStartingBalance()">Save Balance</button>
+            </div>
             <p id="balanceMessage"></p>
-        </div>
+        </section>
     </main>
+
     <footer>
-        <p>&copy; 2024 Finance Tracker</p>
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h3>About Finance Tracker</h3>
+                <p>Your go-to solution for managing finances with ease and efficiency. Track your spending, set budgets, and achieve financial goals all in one place.</p>
+            </div>
+            <div class="footer-section links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="pages/dashboard.html">Dashboard</a></li>
+                    <li><a href="auth/login.html">Login</a></li>
+                    <li><a href="auth/register.html">Register</a></li>
+                    <li><a href="pages/settings.html">Settings</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact">
+                <h3>Contact Us</h3>
+                <p>Email: support@financetracker.com</p>
+                <p>Phone: +91 9372882103</p>
+            </div>
+            <div class="footer-section social">
+                <h3>Follow Us</h3>
+                <a href="#" class="social-icon">🔗</a>
+                <a href="#" class="social-icon">🔗</a>
+                <a href="#" class="social-icon">🔗</a>
+                <a href="#" class="social-icon">🔗</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Finance Tracker | Designed by Aneri Shah & Dev Mehta</p>
+        </div>
     </footer>
 </body>
 </html>
