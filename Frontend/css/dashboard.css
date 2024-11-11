@@ -1,129 +1,264 @@
-/* dashboard.css - Styles for the Dashboard Page */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
+/* General body styling */
 body {
-    background-color: #f4f6f8;
-    color: #333;
+    background: #1f1f2e;
+    color: #ddd;
     line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
+/* Header styling */
 header {
-    background-color: #2c3e50;
+    background: linear-gradient(to right, #33334d, #3a3a5c);
     color: #fff;
-    padding: 1rem;
+    padding: 2rem;
     text-align: center;
+    border-bottom: 2px solid #444;
 }
 
 header h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.logo {
+    height: 50px;
+    width: auto;
+    margin-right: 10px;
+}
+
+.company-name {
     font-size: 2rem;
+    font-weight: bold;
+    color: #81c784; /* Green for company name */
 }
 
 nav ul {
     list-style: none;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
 }
 
 nav ul li {
-    display: inline;
-    margin-right: 1rem;
+    margin: 0;
 }
 
 nav ul li a {
-    color: #fff;
+    color: #b3b3ff;
     text-decoration: none;
-}
-
-main {
-    padding: 2rem;
-}
-
-.set-starting-balance {
-    margin-top: 2rem;
-    padding: 1.5rem;
-    border: 1px solid #ddd;
-    background-color: #f1f1f1;
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
     border-radius: 5px;
-    max-width: 400px;
-    margin-left: auto;
-    margin-right: auto;
+    transition: background 0.3s ease;
+}
+
+nav ul li a:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Main content */
+main {
+    padding: 3rem 2rem;
+    text-align: center;
+    flex-grow: 1;
+}
+
+/* Summary Section */
+.summary-section {
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.summary-section h2 {
+    font-size: 2.2rem;
+    color: #b3b3ff;
+    margin-bottom: 1.5rem;
+}
+
+/* Summary Cards Container */
+#summary {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+/* Individual Summary Card */
+.card {
+    background: #2c2c3a;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.card h3 {
+    color: #81c784;
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+}
+
+.card p {
+    font-size: 1.6rem;
+    color: #b3b3ff;
+    font-weight: bold;
+    margin-top: 0.5rem;
+}
+
+h2 {
+    font-size: 2.2rem;
+    color: #b3b3ff;
+    margin-bottom: 1.5rem;
+}
+
+/* Set Starting Balance Section */
+.set-starting-balance {
+    background: #2c2c3a;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    margin-top: 3rem;
     text-align: center;
 }
 
 .set-starting-balance h3 {
-    margin-top: 0;
-    color: #2c3e50;
+    color: #81c784;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
 }
 
 .set-starting-balance label {
-    display: block;
+    font-size: 1.1rem;
+    color: #ccc;
     margin-bottom: 0.5rem;
-    font-weight: bold;
-    color: #2c3e50;
+    display: block;
 }
 
-.set-starting-balance input[type="number"] {
-    width: 100%;
-    padding: 0.5rem;
+.balance-input-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
     margin-bottom: 1rem;
+}
+
+.set-starting-balance input {
+    font-size: 1.1rem;
+    padding: 0.8rem;
+    border-radius: 5px;
     border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 1rem;
-    box-sizing: border-box;
+    width: 250px;
+    text-align: right;
 }
 
 .set-starting-balance button {
-    padding: 0.5rem 1rem;
-    background-color: #2c3e50;
-    color: white;
+    background: #6a1b9a;
+    color: #fff;
     border: none;
-    border-radius: 4px;
-    font-size: 1rem;
+    border-radius: 5px;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.1rem;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background 0.3s ease;
 }
 
 .set-starting-balance button:hover {
-    background-color: #2c3e50;
+    background: #8e24aa;
 }
 
-#setStartingBalance {
-    color: #2c3e50;
+#balanceMessage {
+    font-size: 1.2rem;
+    color: #b3b3ff;
+    margin-top: 1rem;
 }
 
-#setStartingBalance:empty {
-    display: none;
-}
-
+/* Footer styling */
 footer {
-    background-color: #2c3e50;
-    color: #fff;
+    background: #33334d;
+    color: #ddd;
+    padding: 2rem;
     text-align: center;
-    padding: 1rem;
-    position: absolute;
-    bottom: 0;
     width: 100%;
 }
 
-
-#summary {
+.footer-content {
     display: flex;
     justify-content: space-around;
-    padding: 1rem;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap;
+    padding-bottom: 1.5rem;
 }
 
-#summary div {
-    text-align: center;
+.footer-section {
+    width: 200px;
+    margin-bottom: 1.5rem;
 }
 
-#summary h2 {
+.footer-section h3 {
+    color: #81c784;
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+}
+
+.footer-section p,
+.footer-section ul,
+.footer-section a {
+    color: #ccc;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    text-decoration: none;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin: 0.5rem 0;
+}
+
+.footer-section ul li a:hover {
+    color: #b3b3ff;
+}
+
+.social-icon {
+    color: #81c784;
     font-size: 1.5rem;
-    color: #333;
+    margin: 0 0.3rem;
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #b3b3ff;
+}
+
+.footer-bottom {
+    border-top: 1px solid #555;
+    padding-top: 1rem;
+    font-size: 0.8rem;
+    color: #aaa;
 }

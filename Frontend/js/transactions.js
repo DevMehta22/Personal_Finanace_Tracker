@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const userId = sessionStorage.getItem('userId')
 
     async function fetchTransactions() {
-        const response = await fetch(`http://localhost:8000/public/getTransaction.php?user_id=${userId}`);
+        const response = await fetch(`http://localhost/Personal_Finanace_Tracker/Backend/public/getTransaction.php?user_id=${userId}`);
         const transactions = await response.json();
 
         transactionList.innerHTML = '';
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const type = document.getElementById('type').value;
         const date = document.getElementById('date').value;
 
-        const response = await fetch(`http://localhost:8000/public/addTransaction.php?user_id=${userId}`, {
+        const response = await fetch(`http://localhost/Personal_Finanace_Tracker/Backend/public/addTransaction.php?user_id=${userId}`, {
             method: 'POST',
             body: JSON.stringify({amount,category,type,date})
         });

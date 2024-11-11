@@ -1,4 +1,4 @@
-/* Reset styles */
+
 * {
     margin: 0;
     padding: 0;
@@ -14,24 +14,6 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-}
-.logo-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 1rem;
-}
-
-.logo {
-    height: 50px;
-    width: auto;
-    margin-right: 10px;
-}
-
-.company-name {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #81c784; /* Green for company name */
 }
 
 /* Header styling */
@@ -58,6 +40,10 @@ nav ul {
     gap: 1.5rem;
 }
 
+nav ul li {
+    margin: 0;
+}
+
 nav ul li a {
     color: #b3b3ff;
     text-decoration: none;
@@ -79,7 +65,7 @@ main {
 }
 
 /* Transaction form styling */
-#transaction-form {
+form {
     background: #2c2c3a;
     border-radius: 10px;
     padding: 2rem;
@@ -87,45 +73,28 @@ main {
     margin-bottom: 3rem;
     display: grid;
     gap: 1.5rem;
+    justify-content: center;
+    width: 100%;
     max-width: 500px;
     margin: 0 auto;
 }
 
-#transaction-form h2 {
-    color: #b3b3ff;
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-}
-
-#transaction-form label {
-    font-size: 1rem;
+form label {
+    font-size: 1.1rem;
     color: #ccc;
-    margin-bottom: 0.3rem;
+    display: block;
 }
 
-#transaction-form input, 
-#transaction-form select {
-    font-size: 1rem;
+form input, form select {
+    font-size: 1.1rem;
     padding: 0.8rem;
     border-radius: 5px;
-    border: 1px solid #555;
-    background: #333;
-    color: #eee;
-    transition: border-color 0.3s ease;
+    border: 1px solid #ccc;
+    width: 100%;
+    text-align: right;
 }
 
-#transaction-form input:focus, 
-#transaction-form select:focus {
-    border-color: #81c784;
-}
-
-#transaction-form button {
+form button {
     background: #6a1b9a;
     color: #fff;
     border: none;
@@ -136,11 +105,17 @@ main {
     transition: background 0.3s ease;
 }
 
-#transaction-form button:hover {
+form button:hover {
     background: #8e24aa;
 }
 
 /* Transaction list styling */
+h2 {
+    font-size: 2rem;
+    color: #b3b3ff;
+    margin-bottom: 1.5rem;
+}
+
 #transaction-list {
     background: #2c2c3a;
     border-radius: 10px;
@@ -148,6 +123,7 @@ main {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
     max-width: 1000px;
     margin: 0 auto;
+    margin-top: 2rem;
 }
 
 .transaction-item {
@@ -179,7 +155,6 @@ main {
     color: #e53935;
 }
 
-/* Footer styling */
 footer {
     background: #33334d;
     color: #ddd;
@@ -195,9 +170,15 @@ footer {
     padding-bottom: 1.5rem;
 }
 
+.footer-section {
+    width: 200px;
+    margin-bottom: 1.5rem;
+}
+
 .footer-section h3 {
     color: #81c784;
     font-size: 1.2rem;
+    margin-bottom: 0.8rem;
 }
 
 .footer-section p,
@@ -207,6 +188,15 @@ footer {
     font-size: 0.9rem;
     line-height: 1.5;
     text-decoration: none;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin: 0.5rem 0;
 }
 
 .footer-section ul li a:hover {
@@ -223,3 +213,16 @@ footer {
 .social-icon:hover {
     color: #b3b3ff;
 }
+
+.footer-bottom {
+    border-top: 1px solid #555;
+    padding-top: 1rem;
+    font-size: 0.8rem;
+    color: #aaa;
+}
+
+
+
+
+
+
