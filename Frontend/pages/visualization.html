@@ -5,21 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Financial Data Visualization</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link rel="stylesheet" href="../css/visualization.css"> <!-- Link to your CSS -->
+    <link rel="stylesheet" href="../css/visualization.css"> 
 </head>
 <body>
     <header>
         <div class="logo-container">
-            <img src="..\logo.jpg" alt="Spendify Logo" class="logo"> <!-- Logo Image -->
+            <img src="..\logo.jpg" alt="Spendify Logo" class="logo"> 
             <h1 class="company-name">Spendify</h1>
         </div>
         <h2>Financial Data Visualization</h2>
         <a href="dashboard.html">Back to Dashboard</a>
     </header>
     <main>
-        <canvas id="transactionChart" width="400" height="200"></canvas>
+        <section class="chart-container">
+            <canvas id="transactionChart" width="400" height="200"></canvas>
+        </section>
     </main>
-    <script src="../js/visualization.js"></script> <!-- Link to visualization script -->
+    <script src="../js/visualization.js"></script>
     <footer>
         <div class="footer-content">
             <div class="footer-section about">
@@ -39,13 +41,6 @@
                 <h3>Contact Us</h3>
                 <p>Email: support@financetracker.com</p>
                 <p>Phone: +91 9372882103</p>
-            </div>
-            <div class="footer-section social">
-                <h3>Follow Us</h3>
-                <a href="#" class="social-icon">🔗</a>
-                <a href="#" class="social-icon">🔗</a>
-                <a href="#" class="social-icon">🔗</a>
-                <a href="#" class="social-icon">🔗</a>
             </div>
         </div>
         <div class="footer-bottom">
