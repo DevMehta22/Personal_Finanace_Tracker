@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const username = document.getElementById('name').value;
             const password = document.getElementById('password').value;
 
-            const response = await fetch('http://localhost/Personal_Finanace_Tracker/Backend/public/login.php', {
+            const response = await fetch('http://localhost:8000/public/login.php', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ username, password })
@@ -30,7 +30,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const username = document.getElementById('name').value;
             const email = document.getElementById('email').value;
             const password = document.getElementById('password').value;
-            const response = await fetch('http://localhost/Personal_Finanace_Tracker/Backend/public/register.php', {
+            if(password.length<8){
+                alert('Password must be at least 8 characters long.');
+                return;
+            }
+            const response = await fetch('http://localhost:8000/public/register.php', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ username, email, password })

@@ -5,8 +5,15 @@ document.addEventListener('DOMContentLoaded', async () => {
 async function fetchSummary() {
     const summaryDiv = document.getElementById('summary');
     const userId = sessionStorage.getItem('userId');
+    const currentMonthElement = document.getElementById('currentMonth');
+    const currentDate = new Date();
+    const monthNames = [
+        "January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"
+    ];
+    currentMonthElement.textContent = monthNames[currentDate.getMonth()];
 
-    const response = await fetch(`http://localhost/Personal_Finanace_Tracker/Backend/public/monthly_summary.php?user_id=${userId}`);
+    const response = await fetch(`http://localhost:8000/public/monthly_summary.php?user_id=${userId}`);
     const summaryData = await response.json();
 
     summaryDiv.innerHTML = `
@@ -34,7 +41,7 @@ async function setStartingBalance() {
     const userId = sessionStorage.getItem("userId");
 
     try {
-        const response = await fetch(`http://localhost/Personal_Finanace_Tracker/Backend/public/setStartingBalance.php?user_id=${userId}`, {
+        const response = await fetch(`http://localhost:8000/public/setStartingBalance.php?user_id=${userId}`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ starting_balance: startingBalance })

@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const userId = sessionStorage.getItem('userId');
     
     try {
-        const response = await fetch(`http://localhost/Personal_Finanace_Tracker/Backend/public/dataVisualization.php?user_id=${userId}`);
+        const response = await fetch(`http://localhost:8000/public/dataVisualization.php?user_id=${userId}`);
         const summaryData = await response.json();
         
         // Prepare data for the chart
